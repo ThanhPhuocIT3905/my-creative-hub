@@ -13,10 +13,8 @@ const links = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [dark, setDark] = useState(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("theme") !== "light";
-    }
-    return true;
+    const saved = typeof window !== "undefined" ? localStorage.getItem("theme") : null;
+    return saved ? saved === "dark" : true; // default dark
   });
 
   useEffect(() => {
