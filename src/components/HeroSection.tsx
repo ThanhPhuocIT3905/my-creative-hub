@@ -76,10 +76,10 @@ const HeroSection = () => {
               <Github size={18} /> GitHub
             </a>
             <a
-              href="mailto:thanhphuochaya@gmail.com"
+              href="#projects"
               className="bg-primary text-primary-foreground px-6 py-3 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
             >
-              Liên hệ ngay
+              Dự án của tôi
             </a>
           </motion.div>
         </div>
