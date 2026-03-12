@@ -7,7 +7,7 @@ const links = [
   { label: "Kinh nghiệm", href: "#experience" },
   { label: "Kỹ năng", href: "#skills" },
   { label: "Dự án", href: "#projects" },
-  { label: "Liên hệ", href: "#contact" },
+  { label: "CV", href: "#cv" },
 ];
 
 const Navbar = () => {
