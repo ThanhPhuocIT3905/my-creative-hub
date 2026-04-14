@@ -7,6 +7,8 @@ const links = [
   { label: "Kinh nghiệm", href: "#experience" },
   { label: "Kỹ năng", href: "#skills" },
   { label: "Dự án", href: "#projects" },
+  { label: "Hoạt động", href: "#activities" },
+  { label: "Nghiên cứu", href: "#research" },
   { label: "CV", href: "#cv" },
 ];
 
@@ -14,7 +16,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [dark, setDark] = useState(() => {
     const saved = typeof window !== "undefined" ? localStorage.getItem("theme") : null;
-    return saved ? saved === "dark" : true; // default dark
+    return saved ? saved === "dark" : true;
   });
 
   useEffect(() => {
@@ -37,7 +39,7 @@ const Navbar = () => {
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
         <a href="#" className="text-xl font-bold text-gradient">TP.</a>
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {links.map((l) => (
             <a
               key={l.href}
