@@ -1,88 +1,124 @@
 import { motion } from "framer-motion";
-import { Github, Mail, MapPin, Globe } from "lucide-react";
+import { Github, Mail, MapPin, Globe, ArrowDown, Download } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center section-padding relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
+    <section className="min-h-screen flex items-center relative overflow-hidden">
+      {/* Animated background blobs */}
+      <div className="absolute top-20 -left-32 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[100px] animate-blob pointer-events-none" />
+      <div className="absolute bottom-20 -right-32 w-[400px] h-[400px] rounded-full bg-cyan-400/5 blur-[100px] animate-blob pointer-events-none" style={{ animationDelay: "2s" }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-blue-400/5 blur-[80px] animate-blob pointer-events-none" style={{ animationDelay: "4s" }} />
 
-      <div className="max-w-6xl mx-auto w-full relative z-10">
-        <div className="flex flex-col items-center text-center gap-6">
-          <motion.div
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="w-32 h-32 rounded-full glow-border overflow-hidden bg-secondary flex items-center justify-center"
-          >
-            <img
-              src="https://avatars.githubusercontent.com/u/226345591?v=4"
-              alt="Nguyễn Thanh Phước"
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-primary font-mono text-sm tracking-widest uppercase"
-          >
-            Web Developer
-          </motion.p>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
-          >
-            Nguyễn Thanh{" "}
-            <span className="text-gradient">Phước</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-muted-foreground max-w-xl text-base md:text-lg leading-relaxed"
-          >
-            Sinh viên năm 3 CNTT tại Đại học Đông Á. Đam mê phát triển web với ReactJS, Spring Boot và xây dựng những ứng dụng mang lại giá trị thực tiễn.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground"
-          >
-            <span className="flex items-center gap-1.5"><MapPin size={14} className="text-primary" /> Huế, Việt Nam</span>
-            <span className="flex items-center gap-1.5"><Mail size={14} className="text-primary" /> thanhphuochaya@gmail.com</span>
-            <span className="flex items-center gap-1.5"><Globe size={14} className="text-primary" /> thanhphuochaya.site</span>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="flex gap-3 mt-4"
-          >
-            <a
-              href="https://github.com/ThanhPhuocIT3905"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-card px-6 py-3 rounded-lg flex items-center gap-2 text-sm font-medium hover:border-primary/50 transition-all hover:shadow-[var(--glow-strong)]"
+      <div className="max-w-7xl mx-auto w-full px-6 md:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left - Text */}
+          <div className="space-y-8">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
             >
-              <Github size={18} /> GitHub
-            </a>
-            <a
-              href="#projects"
-              className="bg-primary text-primary-foreground px-6 py-3 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
+              <span className="section-label">Portfolio 2025</span>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight">
+                Xin chào,
+                <br />
+                tôi là{" "}
+                <span className="text-gradient-bold">Phước</span>
+              </h1>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.7 }}
+              className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed"
             >
-              Dự án của tôi
-            </a>
+              Web Developer — Sinh viên năm 3 CNTT tại Đại học Đông Á. Đam mê xây dựng ứng dụng web hiện đại với ReactJS & Spring Boot.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3, duration: 0.7 }}
+              className="flex flex-wrap gap-4 text-sm text-muted-foreground"
+            >
+              <span className="flex items-center gap-2"><MapPin size={15} className="text-primary" /> Huế, Việt Nam</span>
+              <span className="flex items-center gap-2"><Mail size={15} className="text-primary" /> thanhphuochaya@gmail.com</span>
+              <span className="flex items-center gap-2"><Globe size={15} className="text-primary" /> thanhphuochaya.site</span>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="flex flex-wrap gap-4 pt-2"
+            >
+              <a
+                href="#projects"
+                className="bg-primary text-primary-foreground px-8 py-3.5 rounded-xl text-sm font-semibold hover:opacity-90 transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30"
+              >
+                Dự án của tôi
+              </a>
+              <a
+                href="https://github.com/ThanhPhuocIT3905"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-card-hover px-8 py-3.5 rounded-xl flex items-center gap-2 text-sm font-semibold"
+              >
+                <Github size={18} /> GitHub
+              </a>
+              <a
+                href="/cv/CV_Nguyen_Thanh_Phuoc.pdf"
+                download
+                className="glass-card-hover px-8 py-3.5 rounded-xl flex items-center gap-2 text-sm font-semibold"
+              >
+                <Download size={18} /> Tải CV
+              </a>
+            </motion.div>
+          </div>
+
+          {/* Right - Avatar + decorative */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="flex justify-center lg:justify-end"
+          >
+            <div className="relative">
+              {/* Decorative rings */}
+              <div className="absolute -inset-6 rounded-full border-2 border-dashed border-primary/10 animate-[spin_20s_linear_infinite]" />
+              <div className="absolute -inset-12 rounded-full border border-primary/5 animate-[spin_30s_linear_infinite_reverse]" />
+              
+              {/* Avatar */}
+              <div className="w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden border-4 border-primary/20 shadow-2xl shadow-primary/10 rotate-3 hover:rotate-0 transition-transform duration-500">
+                <img
+                  src="https://avatars.githubusercontent.com/u/226345591?v=4"
+                  alt="Nguyễn Thanh Phước"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Floating badge */}
+              <div className="absolute -bottom-4 -left-4 glass-card rounded-xl px-4 py-2 shadow-lg animate-float">
+                <span className="text-xs font-mono text-primary">🚀 Open to work</span>
+              </div>
+              <div className="absolute -top-4 -right-4 glass-card rounded-xl px-4 py-2 shadow-lg animate-float" style={{ animationDelay: "3s" }}>
+                <span className="text-xs font-mono text-primary">⚡ Web Developer</span>
+              </div>
+            </div>
           </motion.div>
         </div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        >
+          <span className="text-xs text-muted-foreground font-mono">Scroll</span>
+          <ArrowDown size={16} className="text-primary animate-bounce" />
+        </motion.div>
       </div>
     </section>
   );

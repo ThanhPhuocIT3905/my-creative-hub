@@ -14,9 +14,10 @@ const links = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [dark, setDark] = useState(() => {
     const saved = typeof window !== "undefined" ? localStorage.getItem("theme") : null;
-    return saved ? saved === "dark" : true;
+    return saved ? saved === "dark" : false; // default light
   });
 
   useEffect(() => {
@@ -30,28 +31,39 @@ const Navbar = () => {
     }
   }, [dark]);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <motion.nav
       initial={{ y: -80 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 glass-card border-t-0 border-x-0"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-sm"
+          : "bg-transparent"
+      }`}
     >
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#" className="text-xl font-bold text-gradient">TP.</a>
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <a href="#" className="text-xl font-extrabold text-gradient-bold">TP.</a>
         <div className="hidden md:flex items-center gap-6">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
             >
               {l.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary rounded-full group-hover:w-full transition-all duration-300" />
             </a>
           ))}
           <button
             onClick={() => setDark(!dark)}
-            className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center text-foreground hover:text-primary transition-colors"
+            className="w-9 h-9 rounded-xl bg-secondary flex items-center justify-center text-foreground hover:text-primary transition-colors"
             aria-label="Toggle theme"
           >
             <AnimatePresence mode="wait">
@@ -70,7 +82,7 @@ const Navbar = () => {
         <div className="flex items-center gap-3 md:hidden">
           <button
             onClick={() => setDark(!dark)}
-            className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center text-foreground hover:text-primary transition-colors"
+            className="w-9 h-9 rounded-xl bg-secondary flex items-center justify-center text-foreground hover:text-primary transition-colors"
             aria-label="Toggle theme"
           >
             {dark ? <Sun size={18} /> : <Moon size={18} />}
@@ -86,7 +98,7 @@ const Navbar = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden overflow-hidden border-t border-border/50"
+            className="md:hidden overflow-hidden border-t border-border/50 bg-background/95 backdrop-blur-xl"
           >
             <div className="flex flex-col gap-4 px-6 py-4">
               {links.map((l) => (
@@ -94,7 +106,7 @@ const Navbar = () => {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
                 >
                   {l.label}
                 </a>
