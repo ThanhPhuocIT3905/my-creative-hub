@@ -23,7 +23,7 @@ const workshopActivities = [
   },
   {
     title: "School Tour: Ready for AI 2025",
-    description: 'Tham dự hội thảo "School Tour: Ready for AI 2025", do Sở Khoa học và Công nghệ Đà Nẵng tài trợ, phối hợp với DevPlus tổ chức.',
+    description: 'Tham dự hội thảo "School Tour: Ready for AI 2025", do Sở KH&CN Đà Nẵng tài trợ.',
     image: "/activities/school-tour-ai.png",
   },
   {
@@ -38,23 +38,25 @@ const ActivitiesSection = () => {
 
   return (
     <section id="activities" className="section-padding">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-2">
-            Hoạt <span className="text-gradient">động</span>
+          <span className="section-label">05 — Hoạt động</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-12 tracking-tight">
+            Hoạt động <span className="text-gradient-bold">ngoại khoá</span>
           </h2>
-          <div className="w-16 h-1 bg-primary rounded-full mb-10" />
 
           {/* Community Service */}
-          <div className="mb-10">
-            <div className="flex items-center gap-2 mb-6">
-              <Heart size={20} className="text-primary" />
-              <h3 className="text-xl font-semibold">Hoạt động cộng đồng</h3>
+          <div className="mb-14">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500 to-pink-500 flex items-center justify-center">
+                <Heart size={20} className="text-white" />
+              </div>
+              <h3 className="text-xl font-bold">Hoạt động cộng đồng</h3>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               {communityActivities.map((act, idx) => (
@@ -64,25 +66,24 @@ const ActivitiesSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="glass-card rounded-xl overflow-hidden group hover:border-primary/30 transition-all duration-300 hover:shadow-[var(--glow-strong)]"
+                  className="bold-card rounded-2xl overflow-hidden group cursor-pointer"
+                  onClick={() => setLightbox(act.image)}
                 >
-                  <div
-                    className="relative overflow-hidden cursor-pointer"
-                    onClick={() => setLightbox(act.image)}
-                  >
+                  <div className="relative overflow-hidden">
                     <img
                       src={act.image}
                       alt={act.title}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-background/0 group-hover:bg-background/20 transition-colors flex items-center justify-center">
-                      <span className="text-xs font-medium text-primary-foreground bg-primary/80 px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                        Xem ảnh
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-primary/10 backdrop-blur-sm">
+                      <span className="text-sm font-semibold text-primary-foreground bg-primary px-4 py-2 rounded-xl">
+                        Xem ảnh lớn
                       </span>
                     </div>
                   </div>
                   <div className="p-5">
-                    <h4 className="font-semibold mb-1">{act.title}</h4>
+                    <h4 className="font-bold mb-1">{act.title}</h4>
                     <p className="text-sm text-muted-foreground">{act.description}</p>
                   </div>
                 </motion.div>
@@ -92,9 +93,11 @@ const ActivitiesSection = () => {
 
           {/* Workshops */}
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <Lightbulb size={20} className="text-primary" />
-              <h3 className="text-xl font-semibold">Hội thảo & Phát triển chuyên môn</h3>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center">
+                <Lightbulb size={20} className="text-white" />
+              </div>
+              <h3 className="text-xl font-bold">Hội thảo & Phát triển chuyên môn</h3>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {workshopActivities.map((act, idx) => (
@@ -104,20 +107,19 @@ const ActivitiesSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="glass-card rounded-xl overflow-hidden group hover:border-primary/30 transition-all duration-300 hover:shadow-[var(--glow-strong)]"
+                  className="bold-card rounded-2xl overflow-hidden group cursor-pointer"
+                  onClick={() => setLightbox(act.image)}
                 >
-                  <div
-                    className="relative overflow-hidden cursor-pointer"
-                    onClick={() => setLightbox(act.image)}
-                  >
+                  <div className="relative overflow-hidden">
                     <img
                       src={act.image}
                       alt={act.title}
-                      className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-44 object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-background/0 group-hover:bg-background/20 transition-colors flex items-center justify-center">
-                      <span className="text-xs font-medium text-primary-foreground bg-primary/80 px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                        Xem ảnh
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-primary/10 backdrop-blur-sm">
+                      <span className="text-sm font-semibold text-primary-foreground bg-primary px-4 py-2 rounded-xl">
+                        Xem ảnh lớn
                       </span>
                     </div>
                   </div>
@@ -139,22 +141,22 @@ const ActivitiesSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-background/90 backdrop-blur-md flex items-center justify-center p-4"
+            className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-xl flex items-center justify-center p-6"
             onClick={() => setLightbox(null)}
           >
             <button
               onClick={() => setLightbox(null)}
-              className="absolute top-6 right-6 w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground hover:text-primary transition-colors"
+              className="absolute top-6 right-6 w-12 h-12 rounded-xl bg-secondary flex items-center justify-center text-foreground hover:text-primary transition-colors"
             >
-              <X size={20} />
+              <X size={24} />
             </button>
             <motion.img
-              initial={{ scale: 0.8, opacity: 0 }}
+              initial={{ scale: 0.85, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
+              exit={{ scale: 0.85, opacity: 0 }}
               src={lightbox}
               alt="Activity"
-              className="max-w-full max-h-[85vh] rounded-xl shadow-2xl object-contain"
+              className="max-w-full max-h-[85vh] rounded-2xl shadow-2xl object-contain"
               onClick={(e) => e.stopPropagation()}
             />
           </motion.div>

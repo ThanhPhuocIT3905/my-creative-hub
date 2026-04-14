@@ -1,58 +1,93 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Calendar, Target } from "lucide-react";
+import { GraduationCap, Target, Languages } from "lucide-react";
 
 const AboutSection = () => {
   return (
     <section id="about" className="section-padding">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-2">
-            Giới <span className="text-gradient">thiệu</span>
+          <span className="section-label">01 — Giới thiệu</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-12 tracking-tight">
+            Về <span className="text-gradient-bold">bản thân</span>
           </h2>
-          <div className="w-16 h-1 bg-primary rounded-full mb-10" />
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="glass-card rounded-xl p-6 space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <GraduationCap className="text-primary" size={20} />
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Education */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bold-card rounded-2xl p-7 space-y-4 group"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                <GraduationCap size={24} className="text-primary group-hover:text-primary-foreground transition-colors" />
+              </div>
+              <div>
+                <h3 className="font-bold text-lg">Đại học Đông Á</h3>
+                <p className="text-sm text-primary font-medium">Công nghệ thông tin</p>
+                <p className="text-xs text-muted-foreground mt-1 font-mono">2023 — 2027</p>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Sinh viên chuyên ngành CNTT với nền tảng vững chắc về OOP, Cấu trúc dữ liệu & Giải thuật. Có kinh nghiệm thực hành phát triển ứng dụng web qua các dự án thực tế.
+              </p>
+            </motion.div>
+
+            {/* Career goal */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bold-card rounded-2xl p-7 space-y-4 group"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                <Target size={24} className="text-primary group-hover:text-primary-foreground transition-colors" />
+              </div>
+              <h3 className="font-bold text-lg">Mục tiêu nghề nghiệp</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Hướng tới vai trò Web/Mobile/Backend Developer. Đam mê thiết kế UI/UX thân thiện, xây dựng hệ thống có khả năng mở rộng và hiệu suất cao.
+              </p>
+            </motion.div>
+
+            {/* Languages */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bold-card rounded-2xl p-7 space-y-4 group"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                <Languages size={24} className="text-primary group-hover:text-primary-foreground transition-colors" />
+              </div>
+              <h3 className="font-bold text-lg">Ngôn ngữ</h3>
+              <div className="space-y-3">
+                <div>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span className="text-muted-foreground">Tiếng Anh</span>
+                    <span className="text-primary font-mono text-xs">Đọc tài liệu</span>
+                  </div>
+                  <div className="h-1.5 bg-secondary rounded-full overflow-hidden">
+                    <div className="h-full w-3/5 bg-primary rounded-full" />
+                  </div>
                 </div>
                 <div>
-                  <h3 className="font-semibold">Đại học Đông Á</h3>
-                  <p className="text-sm text-muted-foreground">Công nghệ thông tin</p>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span className="text-muted-foreground">Tiếng Nhật</span>
+                    <span className="text-primary font-mono text-xs">N5</span>
+                  </div>
+                  <div className="h-1.5 bg-secondary rounded-full overflow-hidden">
+                    <div className="h-full w-1/4 bg-primary rounded-full" />
+                  </div>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground flex items-center gap-2">
-                <Calendar size={14} /> 2023 - 2027
-              </p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Sinh viên chuyên ngành CNTT với nền tảng kiến thức về Lập trình hướng đối tượng (OOP), Cấu trúc dữ liệu và Giải thuật. Có kinh nghiệm thực hành phát triển ứng dụng thông qua các dự án Web.
-              </p>
-            </div>
-
-            <div className="glass-card rounded-xl p-6 space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Target className="text-primary" size={20} />
-                </div>
-                <h3 className="font-semibold">Mục tiêu nghề nghiệp</h3>
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Hướng tới vai trò Web/Mobile/Backend Developer. Thích thiết kế giao diện người dùng thân thiện và tối ưu UX, đồng thời xây dựng các hệ thống có khả năng mở rộng và hiệu suất cao.
-              </p>
-              <div className="flex flex-wrap gap-2 pt-2">
-                {["Tiếng Anh: Đọc tài liệu", "Tiếng Nhật: N5"].map((l) => (
-                  <span key={l} className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary">
-                    {l}
-                  </span>
-                ))}
-              </div>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>
