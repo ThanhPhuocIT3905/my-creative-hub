@@ -11,6 +11,7 @@ const projects = [
     tech: ["Arduino", "C++", "Cơ khí"],
     source: null,
     featured: false,
+    image: "/activities/robot-demo.jpg", // Đặt đường dẫn ảnh demo cho dự án 1
   },
   {
     icon: ShoppingCart,
@@ -21,6 +22,7 @@ const projects = [
     tech: ["ReactJS", "Spring Boot", "SQL Server"],
     source: "https://github.com/IsaacSmith20/05/ecomerce-project",
     featured: true,
+    image: "/activities/ecommerce-demo.png", // Đặt đường dẫn ảnh demo cho dự án 2
   },
   {
     icon: School,
@@ -31,6 +33,7 @@ const projects = [
     tech: ["ReactJS", "Node.js", "MongoDB"],
     source: "https://github.com/ViuGiaLai/ai-ecommerce-platform",
     featured: true,
+    image: "/activities/school-demo.png", // Đặt đường dẫn ảnh demo cho dự án 3
   },
   {
     icon: Flower2,
@@ -39,8 +42,9 @@ const projects = [
     description:
       "Hệ thống nhận diện và phân loại hoa sử dụng thuật toán SVM kết hợp với các kỹ thuật trích xuất đặc trưng hình ảnh tiên tiến.",
     tech: ["ReactJS", "Python", "OpenCV", "Scikit-learn"],
-    source: "https://github.com/IsaacSmith2005/Flowers-Recognition",
+    source: "https://github.com/ViuGiaLai/efficientNetB0_and_grad-cam",
     featured: true,
+    image: "/activities/flowers-demo.png", // Đặt đường dẫn ảnh demo cho dự án 4
   },
 ];
 
@@ -69,12 +73,20 @@ const ProjectsSection = () => {
                 transition={{ delay: idx * 0.1 }}
                 className="bold-card rounded-2xl overflow-hidden group flex flex-col"
               >
-                {/* Project image placeholder */}
+                {/* Project image */}
                 <div className="aspect-video img-placeholder relative overflow-hidden">
-                  <div className="text-center space-y-2 relative z-10">
-                    <ImageIcon size={36} className="mx-auto opacity-40" />
-                    <p className="text-xs opacity-60">Ảnh demo dự án</p>
-                  </div>
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="object-cover w-full h-full"
+                    />
+                  ) : (
+                    <div className="text-center space-y-2 relative z-10">
+                      <ImageIcon size={36} className="mx-auto opacity-40" />
+                      <p className="text-xs opacity-60">Ảnh demo dự án</p>
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 

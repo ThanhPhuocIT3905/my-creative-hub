@@ -6,7 +6,7 @@ import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ActivitiesSection from "@/components/ActivitiesSection";
 import ResearchSection from "@/components/ResearchSection";
-import CVSection from "@/components/CVSection";
+// Đã xóa import CVSection
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -20,7 +20,7 @@ const Index = () => {
       <ProjectsSection />
       <ActivitiesSection />
       <ResearchSection />
-      <CVSection />
+      {/* Đã xóa CVSection theo yêu cầu */}
       <Footer />
     </div>
   );

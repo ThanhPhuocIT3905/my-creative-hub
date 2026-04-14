@@ -25,7 +25,7 @@ const ExperienceSection = () => {
           </h2>
 
           <div className="grid lg:grid-cols-5 gap-8">
-            {/* Company images placeholder */}
+            {/* Company images */}
             <div className="lg:col-span-2 space-y-4">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -33,10 +33,11 @@ const ExperienceSection = () => {
                 viewport={{ once: true }}
                 className="bold-card rounded-2xl overflow-hidden aspect-[4/3] img-placeholder"
               >
-                <div className="text-center space-y-2">
-                  <Building2 size={40} className="mx-auto opacity-40" />
-                  <p className="text-xs opacity-60">Ảnh công ty Ikigai</p>
-                </div>
+                <img
+                  src="/activities/ikigai-company.jpg"
+                  alt="Công ty Ikigai"
+                  className="object-cover w-full h-full"
+                />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -45,10 +46,11 @@ const ExperienceSection = () => {
                 transition={{ delay: 0.1 }}
                 className="bold-card rounded-2xl overflow-hidden aspect-video img-placeholder"
               >
-                <div className="text-center space-y-2">
-                  <ImageIcon size={32} className="mx-auto opacity-40" />
-                  <p className="text-xs opacity-60">Ảnh môi trường làm việc</p>
-                </div>
+                <img
+                  src="/activities/ikigai-environment.jpg"
+                  alt="Môi trường làm việc Ikigai"
+                  className="object-cover w-full h-full"
+                />
               </motion.div>
             </div>
 

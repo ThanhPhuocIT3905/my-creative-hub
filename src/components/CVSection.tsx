@@ -1,3 +1,9 @@
+// Đã xóa component CVSection theo yêu cầu người dùng.
+
+// import { motion } from "framer-motion";
+// import { FileText, Download, ExternalLink } from "lucide-react";
+// const CVSection = () => { ... }
+// export default CVSection;
 import { motion } from "framer-motion";
 import { FileText, Download, ExternalLink } from "lucide-react";
 

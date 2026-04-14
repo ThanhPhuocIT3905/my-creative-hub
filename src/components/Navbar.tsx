@@ -9,7 +9,7 @@ const links = [
   { label: "Dự án", href: "#projects" },
   { label: "Hoạt động", href: "#activities" },
   { label: "Nghiên cứu", href: "#research" },
-  { label: "CV", href: "#cv" },
+  // Đã xóa mục CV theo yêu cầu
 ];
 
 const Navbar = () => {

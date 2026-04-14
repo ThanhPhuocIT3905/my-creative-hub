@@ -18,7 +18,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <span className="section-label">Portfolio 2025</span>
+              <span className="section-label">Portfolio 2026</span>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight">
                 Xin chào,
                 <br />
@@ -90,7 +90,7 @@ const HeroSection = () => {
               <div className="absolute -inset-12 rounded-full border border-primary/5 animate-[spin_30s_linear_infinite_reverse]" />
               
               {/* Avatar */}
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden border-4 border-primary/20 shadow-2xl shadow-primary/10 rotate-3 hover:rotate-0 transition-transform duration-500">
+              <div className="w-80 h-80 md:w-[26rem] md:h-[26rem] rounded-3xl overflow-hidden border-4 border-primary/20 shadow-2xl shadow-primary/10 rotate-3 hover:rotate-0 transition-transform duration-500">
                 <img
                   src="https://avatars.githubusercontent.com/u/226345591?v=4"
                   alt="Nguyễn Thanh Phước"
