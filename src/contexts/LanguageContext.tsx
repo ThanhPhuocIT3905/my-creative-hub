@@ -23,7 +23,7 @@ const translations: Translations = {
   "hero.label": { vi: "Portfolio 2026", en: "Portfolio 2026", ja: "ポートフォリオ 2026" },
   "hero.greeting": { vi: "Xin chào,", en: "Hello,", ja: "こんにちは、" },
   "hero.iam": { vi: "tôi là", en: "I'm", ja: "私は" },
-  "hero.name": { vi: "Phước", en: "Phước", ja: "フック" },
+  "hero.name": { vi: "Phước", en: "Phuoc", ja: "フック" },
   "hero.description": {
     vi: "Web Developer — Sinh viên năm 3 CNTT tại Đại học Đông Á. Đam mê xây dựng ứng dụng web hiện đại với ReactJS & Spring Boot.",
     en: "Web Developer — 3rd-year IT student at Dong A University. Passionate about building modern web applications with ReactJS & Spring Boot.",

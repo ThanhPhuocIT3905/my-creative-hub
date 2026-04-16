@@ -21,7 +21,7 @@ const ProjectsSection = () => {
       period: "07/2025 — 08/2025",
       description: t("proj.ecommerce.desc"),
       tech: ["ReactJS", "Spring Boot", "SQL Server"],
-      source: "https://github.com/IsaacSmith20/05/ecomerce-project",
+      source: "https://github.com/IsaacSmith2005/ecomerce-project.git",
       image: "/activities/ecommerce-demo.png",
     },
     {
@@ -30,7 +30,7 @@ const ProjectsSection = () => {
       period: "2025 — 2026",
       description: t("proj.school.desc"),
       tech: ["ReactJS", "Node.js", "MongoDB"],
-      source: "https://github.com/ViuGiaLai/ai-ecommerce-platform",
+      source: "https://github.com/ViuGiaLai/classroom-management-system.git",
       image: "/activities/school-demo.png",
     },
     {
