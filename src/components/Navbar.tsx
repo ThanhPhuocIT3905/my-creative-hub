@@ -51,7 +51,7 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#" className="text-xl font-extrabold text-gradient-bold">TP.</a>
+        <a href="#" className="text-xl font-extrabold text-gradient-bold">TP.DEV</a>
         <div className="hidden md:flex items-center gap-6">
           {links.map((l) => (
             <a

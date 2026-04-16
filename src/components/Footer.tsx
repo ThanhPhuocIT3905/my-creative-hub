@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="border-t border-border/50 py-12 px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
-          <a href="#" className="text-2xl font-extrabold text-gradient-bold">TP.</a>
+          <a href="#" className="text-2xl font-extrabold text-gradient-bold">TP.DEV</a>
           <p className="text-sm text-muted-foreground mt-1">{t("footer.copyright")}</p>
         </div>
         <div className="flex items-center gap-4">
