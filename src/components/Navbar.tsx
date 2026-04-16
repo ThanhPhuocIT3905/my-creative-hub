@@ -1,24 +1,26 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
-
-const links = [
-  { label: "Giới thiệu", href: "#about" },
-  { label: "Kinh nghiệm", href: "#experience" },
-  { label: "Kỹ năng", href: "#skills" },
-  { label: "Dự án", href: "#projects" },
-  { label: "Hoạt động", href: "#activities" },
-  { label: "Nghiên cứu", href: "#research" },
-  // Đã xóa mục CV theo yêu cầu
-];
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
+  const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dark, setDark] = useState(() => {
     const saved = typeof window !== "undefined" ? localStorage.getItem("theme") : null;
-    return saved ? saved === "dark" : false; // default light
+    return saved ? saved === "dark" : false;
   });
+
+  const links = [
+    { label: t("nav.about"), href: "#about" },
+    { label: t("nav.experience"), href: "#experience" },
+    { label: t("nav.skills"), href: "#skills" },
+    { label: t("nav.projects"), href: "#projects" },
+    { label: t("nav.activities"), href: "#activities" },
+    { label: t("nav.research"), href: "#research" },
+  ];
 
   useEffect(() => {
     const root = document.documentElement;
@@ -61,6 +63,7 @@ const Navbar = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary rounded-full group-hover:w-full transition-all duration-300" />
             </a>
           ))}
+          <LanguageSwitcher />
           <button
             onClick={() => setDark(!dark)}
             className="w-9 h-9 rounded-xl bg-secondary flex items-center justify-center text-foreground hover:text-primary transition-colors"
@@ -80,6 +83,7 @@ const Navbar = () => {
           </button>
         </div>
         <div className="flex items-center gap-3 md:hidden">
+          <LanguageSwitcher />
           <button
             onClick={() => setDark(!dark)}
             className="w-9 h-9 rounded-xl bg-secondary flex items-center justify-center text-foreground hover:text-primary transition-colors"

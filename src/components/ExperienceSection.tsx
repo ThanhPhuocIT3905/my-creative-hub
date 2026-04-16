@@ -1,60 +1,33 @@
 import { motion } from "framer-motion";
-import { Briefcase, Building2, ImageIcon } from "lucide-react";
+import { Briefcase } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ExperienceSection = () => {
+  const { t } = useLanguage();
+
   const tasks = [
-    "Thiết kế và triển khai website sử dụng PHP/WordPress kết hợp React để tối ưu hóa UX.",
-    "Xây dựng React Components tái sử dụng, tùy chỉnh Theme/Plugins theo yêu cầu kỹ thuật.",
-    "Tối ưu hóa SEO On-page giúp cải thiện thứ hạng trang web trên các công cụ tìm kiếm.",
-    "Sử dụng Git quản lý mã nguồn, phối hợp theo mô hình Agile và deploy sản phẩm.",
-    "Đảm bảo Responsive Design và kiểm soát tốc độ tải trang.",
+    t("exp.task1"), t("exp.task2"), t("exp.task3"), t("exp.task4"), t("exp.task5"),
   ];
 
   return (
     <section id="experience" className="section-padding bg-secondary/30">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <span className="section-label">02 — Kinh nghiệm</span>
+        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+          <span className="section-label">{t("exp.label")}</span>
           <h2 className="text-4xl md:text-5xl font-extrabold mb-12 tracking-tight">
-            Nơi tôi đã <span className="text-gradient-bold">làm việc</span>
+            {t("exp.title1")} <span className="text-gradient-bold">{t("exp.title2")}</span>
           </h2>
 
           <div className="grid lg:grid-cols-5 gap-8">
-            {/* Company images */}
             <div className="lg:col-span-2 space-y-4">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="bold-card rounded-2xl overflow-hidden aspect-[4/3] img-placeholder"
-              >
-                <img
-                  src="/activities/ikigai-company.jpg"
-                  alt="Công ty Ikigai"
-                  className="object-cover w-full h-full"
-                />
+              <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bold-card rounded-2xl overflow-hidden aspect-[4/3] img-placeholder">
+                <img src="/activities/ikigai-company.jpg" alt="Công ty Ikigai" className="object-cover w-full h-full" />
               </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="bold-card rounded-2xl overflow-hidden aspect-video img-placeholder"
-              >
-                <img
-                  src="/activities/ikigai-environment.jpg"
-                  alt="Môi trường làm việc Ikigai"
-                  className="object-cover w-full h-full"
-                />
+              <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bold-card rounded-2xl overflow-hidden aspect-video img-placeholder">
+                <img src="/activities/ikigai-environment.jpg" alt="Môi trường làm việc Ikigai" className="object-cover w-full h-full" />
               </motion.div>
             </div>
 
-            {/* Experience detail */}
             <div className="lg:col-span-3">
               <div className="bold-card rounded-2xl p-8 h-full">
                 <div className="flex items-center justify-between mb-6">
@@ -63,8 +36,8 @@ const ExperienceSection = () => {
                       <Briefcase className="text-primary" size={24} />
                     </div>
                     <div>
-                      <h3 className="font-bold text-xl">Công ty Ikigai</h3>
-                      <p className="text-sm text-primary font-medium">Web Developer Intern → Web Developer</p>
+                      <h3 className="font-bold text-xl">{t("exp.company")}</h3>
+                      <p className="text-sm text-primary font-medium">{t("exp.role")}</p>
                     </div>
                   </div>
                   <span className="text-xs font-mono text-primary bg-primary/10 px-4 py-2 rounded-full hidden sm:block">
@@ -74,14 +47,7 @@ const ExperienceSection = () => {
 
                 <ul className="space-y-4">
                   {tasks.map((task, i) => (
-                    <motion.li
-                      key={i}
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.08 }}
-                      className="flex gap-3 text-sm text-muted-foreground leading-relaxed"
-                    >
+                    <motion.li key={i} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="flex gap-3 text-sm text-muted-foreground leading-relaxed">
                       <span className="mt-2 w-2 h-2 rounded-full bg-primary shrink-0" />
                       {task}
                     </motion.li>
@@ -89,10 +55,8 @@ const ExperienceSection = () => {
                 </ul>
 
                 <div className="flex flex-wrap gap-2 mt-6 pt-6 border-t border-border/50">
-                  {["PHP", "WordPress", "React", "Git", "SEO", "Agile"].map((t) => (
-                    <span key={t} className="text-xs px-3 py-1.5 rounded-lg bg-primary/10 text-primary font-mono">
-                      {t}
-                    </span>
+                  {["PHP", "WordPress", "React", "Git", "SEO", "Agile"].map((tech) => (
+                    <span key={tech} className="text-xs px-3 py-1.5 rounded-lg bg-primary/10 text-primary font-mono">{tech}</span>
                   ))}
                 </div>
               </div>
